@@ -11,7 +11,7 @@
 .campo-texto input {
   background-color: #ffff;
   /*add sombreado */
-  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+  box-shadow: 10px 10px 30px rgba(1, 1, 1, 0.2);
   width: 100%;
   height: 4.063rem;
   border: none;
