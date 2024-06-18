@@ -1,22 +1,20 @@
 //importar css
+import { useState } from "react";
 import "./CampoTexto.css";
 
 //arrow function, variavel com letra maiuscula por ser um componente react
 const CampoTexto = (props) => {
   const placeholder = `Digite ${props.placeholder}...`;
 
-  let valor = "Carolina";
-
   const digitar = (evento) => {
-    valor = evento.target.value;
-    console.log(valor);
+    props.aoAlterar(evento.target.value);
   };
 
   return (
     <div className="campo-texto">
       <label>{props.label}</label>
       <input
-        value={valor}
+        value={props.valor}
         onChange={digitar}
         required={props.obrigatorio}
         placeholder={placeholder}
