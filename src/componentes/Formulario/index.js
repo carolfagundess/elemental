@@ -4,25 +4,21 @@ import ListaSuspensa from "../ListaSuspensa";
 import Botao from "../Botao";
 import { useState } from "react";
 
-const Formulario = () => {
-  const grupos = [
-    "Selecione um grupo",
-    "Skywalker",
-    "Kenobi",
-    "Fett",
-    "Hutt",
-    "Mandalorian",
-    "Jedi",
-    "Sith",
-  ];
+const Formulario = (props) => {
 
   const [nome, setNome] = useState("");
   const [ator, setAtor] = useState("");
   const [imagem, setImagem] = useState("");
+  const [grupo, setGrupo] = useState("");
 
   const salvar = (evento) => {
     evento.preventDefault();
-    console.log("Foi submetido", nome, ator, imagem);
+    props.aoPersonagemCadastrado({
+      nome,
+      ator,
+      imagem,
+      grupo
+    });
   };
 
   return (
@@ -50,7 +46,13 @@ const Formulario = () => {
           valor={imagem}
           aoAlterar={(valor) => setImagem(valor)}
         />
-        <ListaSuspensa obrigatorio={true} label="Agrupamento" itens={grupos} />
+        <ListaSuspensa
+          obrigatorio={true}
+          label="Agrupamento"
+          itens={props.grupos}
+          valor={grupo}
+          aoAlterar={(valor) => setGrupo(valor)}
+        />
         <Botao>Criar card</Botao>
       </form>
     </section>

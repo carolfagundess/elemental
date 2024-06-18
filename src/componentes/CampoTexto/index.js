@@ -1,5 +1,4 @@
 //importar css
-import { useState } from "react";
 import "./CampoTexto.css";
 
 //arrow function, variavel com letra maiuscula por ser um componente react
