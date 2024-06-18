@@ -4,8 +4,8 @@ import ListaSuspensa from "../ListaSuspensa";
 import Botao from "../Botao";
 
 const Formulario = () => {
-  const clas = [
-    "Selecione um clã",
+  const grupos = [
+    "Selecione um grupo",
     "Skywalker",
     "Kenobi",
     "Fett",
@@ -15,15 +15,20 @@ const Formulario = () => {
     "Sith",
   ];
 
+  const salvar = (evento) => {
+    evento.preventDefault();
+    console.log('Foi submetido');
+  };
+
   return (
     <section className="formulario">
-      <form>
+      <form onSubmit={salvar}>
         <h2>Preencha os dados para criar o card do Star Wars</h2>
-        <CampoTexto label="Nome" placeholder="o nome do personagem" />
-        <CampoTexto label="Ator" placeholder="o nome do ator" />
-        <CampoTexto label="Imagem" placeholder="o endereço da imagem" />
-        <ListaSuspensa label="Clãs" itens={clas} />
-        <Botao texto="Criar Card"/>
+        <CampoTexto obrigatorio={true} label="Nome" placeholder="o nome do personagem" />
+        <CampoTexto obrigatorio={true} label="Ator" placeholder="o nome do ator" />
+        <CampoTexto obrigatorio={true} label="Imagem" placeholder="o endereço da imagem" />
+        <ListaSuspensa obrigatorio={true} label="Agrupamento" itens={grupos} />
+        <Botao>Criar card</Botao>
       </form>
     </section>
   );
