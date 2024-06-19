@@ -1,3 +1,4 @@
+import Personagem from '../Personagem'
 import './Grupo.css'
 
 //recebemos props como parametro
