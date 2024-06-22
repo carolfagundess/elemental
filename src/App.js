@@ -51,14 +51,21 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Formulario grupos={grupos.map(grupo => grupo.nome)}
+      <Formulario
+        grupos={grupos.map((grupo) => grupo.nome)}
         aoPersonagemCadastrado={(personagem) =>
           aoNovoPersonagemCadastrado(personagem)
         }
       />
 
       {grupos.map((grupo) => (
-        <Grupo key={grupo.nome} nome={grupo.nome} corPrimaria={grupo.corPrimaria} corSecundaria={grupo.corSecundaria} />
+        <Grupo
+          key={grupo.nome}
+          nome={grupo.nome}
+          corPrimaria={grupo.corPrimaria}
+          corSecundaria={grupo.corSecundaria}
+          personagens={personagens}
+        />
       ))}
     </div>
   );

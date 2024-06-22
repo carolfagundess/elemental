@@ -1,14 +1,15 @@
 import "./Personagem.css";
 
-const Personagem = () => {
+//desestruturou o props 
+const Personagem = ({nome, imagem, ator}) => {
   return (
     <div className="personagem">
       <div className="cabecalho">
-        <img src="https://github.com/carolfagundess.png" alt="Foto de perfil" />
+        <img src={imagem} alt={nome} />
       </div>
       <div className="rodape">
-        <h4>carol fagundess</h4>
-        <h5>estudante</h5>
+        <h4>{nome}</h4>
+        <h5>{ator}</h5>
       </div>
     </div>
   );
