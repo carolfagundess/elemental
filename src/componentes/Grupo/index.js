@@ -9,6 +9,8 @@ const Grupo = (props) => {
       <div className="personagens">
         {props.personagens.map((personagem) => (
           <Personagem
+            corDeFundo={props.corPrimaria}
+            key={personagem.nome}
             nome={personagem.nome}
             ator={personagem.ator}
             imagem={personagem.imagem}

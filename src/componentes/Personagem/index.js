@@ -1,10 +1,10 @@
 import "./Personagem.css";
 
-//desestruturou o props 
-const Personagem = ({nome, imagem, ator}) => {
+//desestruturou o props
+const Personagem = ({ nome, imagem, ator, corDeFundo }) => {
   return (
     <div className="personagem">
-      <div className="cabecalho">
+      <div className="cabecalho" style={{ backgroundColor: corDeFundo }}>
         <img src={imagem} alt={nome} />
       </div>
       <div className="rodape">

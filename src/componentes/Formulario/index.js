@@ -5,7 +5,6 @@ import Botao from "../Botao";
 import { useState } from "react";
 
 const Formulario = (props) => {
-
   const [nome, setNome] = useState("");
   const [ator, setAtor] = useState("");
   const [imagem, setImagem] = useState("");
@@ -17,8 +16,13 @@ const Formulario = (props) => {
       nome,
       ator,
       imagem,
-      grupo
+      grupo,
     });
+    //limpando os inputs
+    setNome("");
+    setAtor("");
+    setImagem("");
+    setGrupo("");
   };
 
   return (
