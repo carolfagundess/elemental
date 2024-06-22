@@ -2,6 +2,7 @@ import { useState } from "react";
 import Banner from "./componentes/Banner/Banner";
 import Formulario from "./componentes/Formulario";
 import Grupo from "./componentes/Grupo";
+import Personagem from "./componentes/Personagem";
 
 function App() {
   const grupos = [
@@ -64,7 +65,9 @@ function App() {
           nome={grupo.nome}
           corPrimaria={grupo.corPrimaria}
           corSecundaria={grupo.corSecundaria}
-          personagens={personagens}
+          personagens={personagens.filter(
+            (personagem) => personagem.grupo === grupo.nome
+          )}
         />
       ))}
     </div>

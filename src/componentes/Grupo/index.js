@@ -3,7 +3,7 @@ import "./Grupo.css";
 
 //recebemos props como parametro
 const Grupo = (props) => {
-  return (
+  return props.personagens.length > 0 ? (
     <section className="grupo" style={{ backgroundColor: props.corSecundaria }}>
       <h3 style={{ borderBottomColor: props.corPrimaria }}>{props.nome}</h3>
       <div className="personagens">
@@ -16,6 +16,8 @@ const Grupo = (props) => {
         ))}
       </div>
     </section>
+  ) : (
+    ""
   );
 };
 
