@@ -12,22 +12,22 @@ function App() {
       corSecundaria: "#d9f7e9",
     },
     {
-      nome: "Kenobi",
+      nome: "Rebelião",
       corPrimaria: "#82CFFA",
       corSecundaria: "#E8F8FF",
     },
     {
-      nome: "Fett",
+      nome: "República Galáctica",
       corPrimaria: "#A6D157",
       corSecundaria: "#F0F8E2",
     },
     {
-      nome: "Hutt",
+      nome: "Resistência",
       corPrimaria: "#E06B69",
       corSecundaria: "#FDE7E8",
     },
     {
-      nome: "Mandalorian",
+      nome: "Caçadores de Recompensas",
       corPrimaria: "#DB6EBF",
       corSecundaria: "#FAE9F5",
     },
@@ -35,6 +35,26 @@ function App() {
       nome: "Sith",
       corPrimaria: "#FF8A29",
       corSecundaria: "#FFEEDF",
+    },
+    {
+      nome: "Império Galáctico",
+      corPrimaria: "#1F1F1F",
+      corSecundaria: "#B1B1B1",
+    },
+    {
+      nome: "Primeira Ordem",
+      corPrimaria: "#900C3F",
+      corSecundaria: "#F0B7A4",
+    },
+    {
+      nome: "Separatistas",
+      corPrimaria: "#4B9CD3",
+      corSecundaria: "#E2F3FA",
+    },
+    {
+      nome: "Mandalorianos",
+      corPrimaria: "#8E44AD",
+      corSecundaria: "#DCC6E0",
     },
   ];
 
@@ -72,7 +92,7 @@ function App() {
       ator: "Temuera Morrison",
       imagem:
         "https://i.pinimg.com/736x/54/d1/02/54d1029f78d49d4add4e628030620fee.jpg",
-      grupo: "Mandalorian",
+      grupo: "Caçadores de Recompensas",
     },
     {
       nome: "Darth Maul",
@@ -99,17 +119,20 @@ function App() {
         }
       />
 
-      {grupos.map((grupo) => (
-        <Grupo
-          key={grupo.nome}
-          nome={grupo.nome}
-          corPrimaria={grupo.corPrimaria}
-          corSecundaria={grupo.corSecundaria}
-          personagens={personagens.filter(
-            (personagem) => personagem.grupo === grupo.nome
-          )}
-        />
-      ))}
+      {grupos.map((grupo, indice) => {
+        console.log("renderizando um personagem");
+        return (
+          <Grupo
+            key={indice}
+            nome={grupo.nome}
+            corPrimaria={grupo.corPrimaria}
+            corSecundaria={grupo.corSecundaria}
+            personagens={personagens.filter(
+              (personagem) => personagem.grupo === grupo.nome
+            )}
+          />
+        );
+      })}
     </div>
   );
 }
