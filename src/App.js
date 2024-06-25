@@ -4,14 +4,14 @@ import Formulario from "./componentes/Formulario";
 import Grupo from "./componentes/Grupo";
 
 function App() {
-  const grupos = [
+  const [grupos, setGrupos] = useState([
     {
       nome: "Jedi",
       corPrimaria: "#57c278",
       corSecundaria: "#d9f7e9",
     },
     {
-      nome: "Rebelião",
+      nome: "Aliança Rebelde",
       corPrimaria: "#82CFFA",
       corSecundaria: "#E8F8FF",
     },
@@ -24,11 +24,6 @@ function App() {
       nome: "Resistência",
       corPrimaria: "#E06B69",
       corSecundaria: "#FDE7E8",
-    },
-    {
-      nome: "Caçadores de Recompensas",
-      corPrimaria: "#DB6EBF",
-      corSecundaria: "#FAE9F5",
     },
     {
       nome: "Sith",
@@ -51,11 +46,16 @@ function App() {
       corSecundaria: "#E2F3FA",
     },
     {
+      nome: "Caçadores de Recompensas",
+      corPrimaria: "#DB6EBF",
+      corSecundaria: "#FAE9F5",
+    },
+    {
       nome: "Mandalorianos",
       corPrimaria: "#8E44AD",
       corSecundaria: "#DCC6E0",
     },
-  ];
+  ]);
 
   const inicial = [
     {
@@ -112,6 +112,17 @@ function App() {
     console.log("deletando personagem");
   }
 
+  function mudarCorGrupo(cor, nome) {
+    setGrupos(
+      grupos.map((grupo) => {
+        if (grupo.nome === nome) {
+          grupo.corPrimaria = cor;
+        }
+        return grupo;
+      })
+    );
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -133,6 +144,7 @@ function App() {
               (personagem) => personagem.grupo === grupo.nome
             )}
             aoDeletar={deletarPersonagem}
+            mudarCor={mudarCorGrupo}
           />
         );
       })}

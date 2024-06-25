@@ -5,7 +5,7 @@ import "./Grupo.css";
 const Grupo = (props) => {
   return props.personagens.length > 0 ? (
     <section className="grupo" style={{ backgroundColor: props.corSecundaria }}>
-      <input value={props.corPrimaria} type="color" className="input-cor" />
+      <input onChange={eveto => props.mudarCor(eveto.target.value, props.nome)} value={props.corPrimaria} type="color" className="input-cor" />
       <h3 style={{ borderBottomColor: props.corPrimaria }}>{props.nome}</h3>
       <div className="personagens">
         {props.personagens.map((personagem) => (
