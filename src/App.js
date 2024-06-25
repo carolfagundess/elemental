@@ -2,55 +2,66 @@ import { useState } from "react";
 import Banner from "./componentes/Banner/Banner";
 import Formulario from "./componentes/Formulario";
 import Grupo from "./componentes/Grupo";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [grupos, setGrupos] = useState([
     {
+      id: uuidv4(),
       nome: "Jedi",
       corPrimaria: "#57c278",
       corSecundaria: "#d9f7e9",
     },
     {
+      id: uuidv4(),
       nome: "Aliança Rebelde",
       corPrimaria: "#82CFFA",
       corSecundaria: "#E8F8FF",
     },
     {
+      id: uuidv4(),
       nome: "República Galáctica",
       corPrimaria: "#A6D157",
       corSecundaria: "#F0F8E2",
     },
     {
+      id: uuidv4(),
       nome: "Resistência",
       corPrimaria: "#E06B69",
       corSecundaria: "#FDE7E8",
     },
     {
+      id: uuidv4(),
       nome: "Sith",
       corPrimaria: "#FF8A29",
       corSecundaria: "#FFEEDF",
     },
     {
+      id: uuidv4(),
       nome: "Império Galáctico",
       corPrimaria: "#1F1F1F",
       corSecundaria: "#B1B1B1",
     },
     {
+      id: uuidv4(),
       nome: "Primeira Ordem",
       corPrimaria: "#900C3F",
       corSecundaria: "#F0B7A4",
     },
     {
+      id: uuidv4(),
       nome: "Separatistas",
       corPrimaria: "#4B9CD3",
       corSecundaria: "#E2F3FA",
     },
     {
+      id: uuidv4(),
       nome: "Caçadores de Recompensas",
       corPrimaria: "#DB6EBF",
       corSecundaria: "#FAE9F5",
     },
     {
+      id: uuidv4(),
       nome: "Mandalorianos",
       corPrimaria: "#8E44AD",
       corSecundaria: "#DCC6E0",
@@ -59,6 +70,7 @@ function App() {
 
   const inicial = [
     {
+      id: uuidv4(),
       nome: "Luke Skywalker",
       ator: "Mark Hamill",
       imagem:
@@ -66,6 +78,7 @@ function App() {
       grupo: "Jedi",
     },
     {
+      id: uuidv4(),
       nome: "Anakin Skywalker",
       ator: "Hayden Christensen",
       imagem:
@@ -73,6 +86,7 @@ function App() {
       grupo: "Jedi",
     },
     {
+      id: uuidv4(),
       nome: "Darth Vader",
       ator: "James Earl Jones (voz)",
       imagem:
@@ -80,6 +94,7 @@ function App() {
       grupo: "Sith",
     },
     {
+      id: uuidv4(),
       nome: "Obi-Wan Kenobi",
       ator: "Ewan McGregor",
       imagem:
@@ -87,6 +102,7 @@ function App() {
       grupo: "Jedi",
     },
     {
+      id: uuidv4(),
       nome: "Boba Fett",
       ator: "Temuera Morrison",
       imagem:
@@ -94,6 +110,7 @@ function App() {
       grupo: "Caçadores de Recompensas",
     },
     {
+      id: uuidv4(),
       nome: "Darth Maul",
       ator: "Ray Park",
       imagem:
@@ -108,8 +125,8 @@ function App() {
     setPersonagens([...personagens, personagem]);
   };
 
-  function deletarPersonagem() {
-    console.log("deletando personagem");
+  function deletarPersonagem(id) {
+    setPersonagens(personagens.filter((personagem) => personagem.id !== id));
   }
 
   function mudarCorGrupo(cor, nome) {
