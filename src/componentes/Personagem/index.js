@@ -1,9 +1,12 @@
 import "./Personagem.css";
 
 //desestruturou o props
-const Personagem = ({ nome, imagem, ator, corDeFundo }) => {
+const Personagem = ({ nome, imagem, ator, corDeFundo, aoDeletar }) => {
   return (
     <div className="personagem">
+      <div className="deletar" onClick={aoDeletar}>
+        deletar
+      </div>
       <div className="cabecalho" style={{ backgroundColor: corDeFundo }}>
         <img src={imagem} alt={nome} />
       </div>

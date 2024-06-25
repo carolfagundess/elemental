@@ -2,7 +2,6 @@ import { useState } from "react";
 import Banner from "./componentes/Banner/Banner";
 import Formulario from "./componentes/Formulario";
 import Grupo from "./componentes/Grupo";
-import Personagem from "./componentes/Personagem";
 
 function App() {
   const grupos = [
@@ -109,6 +108,10 @@ function App() {
     setPersonagens([...personagens, personagem]);
   };
 
+  function deletarPersonagem() {
+    console.log("deletando personagem");
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -120,7 +123,6 @@ function App() {
       />
 
       {grupos.map((grupo, indice) => {
-        console.log("renderizando um personagem");
         return (
           <Grupo
             key={indice}
@@ -130,6 +132,7 @@ function App() {
             personagens={personagens.filter(
               (personagem) => personagem.grupo === grupo.nome
             )}
+            aoDeletar={deletarPersonagem}
           />
         );
       })}

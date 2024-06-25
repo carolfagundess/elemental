@@ -14,6 +14,7 @@ const Grupo = (props) => {
             nome={personagem.nome}
             ator={personagem.ator}
             imagem={personagem.imagem}
+            aoDeletar={props.aoDeletar}
           />
         ))}
       </div>
