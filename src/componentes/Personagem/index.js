@@ -1,12 +1,11 @@
+import { AiFillCloseCircle } from "react-icons/ai";
 import "./Personagem.css";
 
 //desestruturou o props
 const Personagem = ({ nome, imagem, ator, corDeFundo, aoDeletar }) => {
   return (
     <div className="personagem">
-      <div className="deletar" onClick={aoDeletar}>
-        deletar
-      </div>
+      <AiFillCloseCircle size={25} className="deletar" onClick={aoDeletar} />
       <div className="cabecalho" style={{ backgroundColor: corDeFundo }}>
         <img src={imagem} alt={nome} />
       </div>
