@@ -125,6 +125,10 @@ function App() {
     setPersonagens([...personagens, personagem]);
   };
 
+  function cadastrarGrupo(novoGrupo) {
+    setGrupos([...grupos, { ...novoGrupo, id: uuidv4() }]);
+  }
+
   function deletarPersonagem(id) {
     setPersonagens(personagens.filter((personagem) => personagem.id !== id));
   }
@@ -144,6 +148,7 @@ function App() {
     <div className="App">
       <Banner />
       <Formulario
+        aoNovoGrupoCadastrado={(grupo) => cadastrarGrupo(grupo)}
         grupos={grupos.map((grupo) => grupo.nome)}
         aoPersonagemCadastrado={(personagem) =>
           aoNovoPersonagemCadastrado(personagem)
